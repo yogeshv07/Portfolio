@@ -1,0 +1,354 @@
+/* Global Styles */
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #000000 60%, #001133 100%);
+    background-size: 400% 400%;
+    color: #fff;
+    scroll-behavior: smooth;
+    position: relative;
+    overflow-x: hidden;
+    animation: gradientMove 12s ease-in-out infinite;
+  }
+
+  /* Particles Layer */
+  .particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* behind content */
+  }
+
+  /* Main App Container */
+  .app {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1; /* content above particles */
+    animation: fadeIn 1.5s ease-in;
+  }
+
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #001133, #001a33);
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.7);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  .navbar h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #fff;
+  }
+
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar li {
+    margin-left: 25px;
+  }
+
+  .navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .navbar a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #00aaff;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+  }
+
+  .navbar a:hover {
+    color: #00aaff;
+  }
+
+  .navbar a:hover::after {
+    width: 100%;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 40px 0;
+    animation: slideDown 1s ease forwards;
+  }
+
+  .profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid #222;
+    object-fit: cover;
+    margin-bottom: 15px;
+    transition: border-color 0.3s, transform 0.5s, box-shadow 0.5s;
+  }
+
+  .profile-pic:hover {
+    border-color: #00aaff;
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 10px 30px rgba(0,170,255,0.7);
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+    color: #fff;
+    text-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff, 0 0 20px #00ffff;
+    animation: neonPulse 1.5s infinite alternate;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeIn 2s ease 0.5s forwards;
+  }
+
+  .socials a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+
+  .socials a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #00aaff;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: width 0.3s ease;
+  }
+
+  .socials a:hover {
+    color: #00aaff;
+    transform: scale(1.2) translateY(-3px);
+    text-shadow: 0 0 10px #00aaff, 0 0 20px #00ffff;
+  }
+
+  .socials a:hover::after {
+    width: 100%;
+  }
+
+  /* Cards */
+  .card {
+    background: #0a0a0a;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+  }
+
+  .card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(0,170,255,0.5);
+  }
+
+  .card h2 {
+    color: #fff;
+    margin-bottom: 15px;
+  }
+
+  .card ul {
+    padding-left: 20px;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 0.9rem;
+    color: #888;
+    animation: fadeIn 1.5s ease forwards;
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px);}
+    to { opacity: 1; transform: translateY(0);}
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+  }
+
+  /* Gradient Animation Keyframes */
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* ====== Responsive Design ====== */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px 15px;
+    }
+    
+    .navbar ul {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .navbar li {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+
+    h1 { font-size: 2rem; }
+    .tagline { font-size: 1rem; }
+    .profile-pic { width: 130px; height: 130px; }
+    .card { padding: 20px; }
+  }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 1.7rem; }
+    .tagline { font-size: 0.9rem; }
+    .profile-pic { width: 110px; height: 110px; }
+    .socials a { margin: 0 8px; font-size: 0.9rem; }
+    .card { padding: 15px; }
+    .navbar h2 { font-size: 1.2rem; }
+  }
+
+
+  /* Header Animations */
+  .header h1 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+    color: #fff;
+    text-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff, 0 0 20px #00ffff;
+    animation: neonPulse 1.5s infinite alternate;
+  }
+
+  .header .tagline {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeIn 2s ease 0.5s forwards;
+  }
+
+  /* Social Links Neon Glow Animation */
+  .socials a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+
+  .socials a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #00aaff;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: width 0.3s ease;
+  }
+
+  .socials a:hover {
+    color: #00aaff;
+    transform: scale(1.2) translateY(-3px);
+    text-shadow: 0 0 10px #00aaff, 0 0 20px #00ffff;
+  }
+
+  .socials a:hover::after {
+    width: 100%;
+  }
+
+  /* Keyframes */
+  @keyframes neonPulse {
+    0% {
+      text-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff, 0 0 20px #00ffff;
+    }
+    50% {
+      text-shadow: 0 0 10px #00aaff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+    }
+    100% {
+      text-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff, 0 0 20px #00ffff;
+    }
+  }
+
+  .skills-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* adjust for your card height */
+    z-index: 0;
+    pointer-events: none; /* allows clicks on text */
+  }
+
+  .card p {
+    position: relative;
+    z-index: 1; /* text above icons */
+  }
+
+  .skills-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* adjust based on your card */
+    z-index: 0;
+    pointer-events: none; /* allows clicks on text */
+  }
+
+  #skills p {
+    position: relative;
+    z-index: 1; /* text stays above icons */
+  }
