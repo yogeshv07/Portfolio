@@ -35,3 +35,36 @@
     transform: translateX(-50%); /* move by half container (because icons duplicated) */
   }
 }
+
+/* Full-page Neon Grid */
+.grid-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  grid-auto-rows: 40px;
+  gap: 2px;
+  z-index: -3;
+  pointer-events: none;
+}
+
+.grid-cell {
+  background: rgba(0, 170, 255, 0.05);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.grid-cell.hovered {
+  background: rgba(0, 255, 255, 0.4);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+}
+
+/* Particles Layer */
+.particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; }
+
+/* Navbar / Header / Cards / Footer remain same as your previous neon styles */
+
+/* Optional: scroll parallax */
+.header { transform: translateY(calc(var(--scroll, 0) * 0.2px)); }
