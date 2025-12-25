@@ -101,6 +101,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#certifications">Certificates</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -177,7 +178,7 @@
         </p>
 
         <a
-          href="https://github.com/yogeshv07/airline-ticket-booking"
+          href="https://github.com/yogeshv07/flight_ticket_booking_system"
           target="_blank"
           rel="noopener noreferrer"
           className="project-btn"
