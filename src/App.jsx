@@ -281,12 +281,6 @@
 
   </div>
 </section>
-
-
-
-
-
-
         {/* Contact */}
         <section id="contact" className="card">
           <h2>Contact Me</h2>

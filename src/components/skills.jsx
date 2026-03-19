@@ -11,6 +11,8 @@ const icons = [
   "/assets/skills/C.png",
   "/assets/skills/C++.png",
   "/assets/skills/mongodb.png",
+  "/assets/skills/aws.png",
+
 ];
 
 const SkillsTrain = () => {
